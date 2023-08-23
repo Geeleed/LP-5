@@ -73,5 +73,9 @@ const parallax = () => {
     document.getElementById('img-we-do-1').style.translate = `0px ${(about.offsetTop - scrollY - innerHeight) * 0.1}px`
     document.getElementById('img-we-do-2').style.translate = `0px ${(about.offsetTop - scrollY - innerHeight) * 0.2}px`
     document.getElementById('card-2').style.translate = `${-(before_port.offsetTop - scrollY - innerHeight) * 0.2}px 0px`
-    document.querySelector('form').style.translate = `${(contact.offsetTop - scrollY - innerHeight)*0.7}px 0px`
+    document.querySelector('#contact>div').style.translate = `${(contact.offsetTop - scrollY - innerHeight)*0.7}px 0px`
+}
+const ham = document.getElementById('nav-ham')
+const ham_on = () =>{
+    ham.classList.toggle('ham-on')
 }
