@@ -1,36 +1,134 @@
-*{
+* {
     font-family: 'Noto Sans Thai Looped', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: 1px dashed; */
+    scroll-behavior: smooth;
+    outline: 1px dashed;
 }
-#home{
+
+body {
+    overflow-x: hidden;
+}
+
+.nav,
+.show-nav {
+    display: flex;
+    animation: nav 0.5s forwards;
+    background-color: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    width: 100%;
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    >#nav-menu {
+        color: white;
+    }
+}
+
+.show-nav {
+    >#nav-menu {
+        color: rgb(0, 0, 0);
+    }
+
+    animation: show-nav 0.5s forwards;
+}
+
+@keyframes nav {
+    0% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: #ffffff00;
+    }
+}
+
+@keyframes show-nav {
+    0% {
+        background-color: #ffffff00;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >h1 {
+        font-size: 1rem;
+        font-weight: 900;
+    }
+
+    >h2 {
+        font-size: 0.8rem;
+    }
+}
+
+#nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    /* gap: 2rem; */
+    height: 100%;
+
+    >a {
+        padding: 0 2rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.active {
+    background-color: #111;
+    color: white;
+}
+
+#home {
     height: 80vh;
-    >div{
+    margin-bottom: 2rem;
+
+    >div {
         height: 100%;
         display: flex;
     }
 }
-#left-zone{
+
+#left-zone {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
-    >div{
+
+    >div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        >h1{
+
+        >h1 {
             font-size: 7vw;
         }
-        >h2{
+
+        >h2 {
             font-size: 3vw;
         }
     }
 }
-#right-zone{
+
+#right-zone {
     width: 50%;
     background-image: url('assets/images/aryan-dhiman-iGLLtLINSkw-unsplash.jpg');
     background-position-x: center;
@@ -38,13 +136,14 @@
     background-size: cover;
     color: white;
     position: relative;
-    >p{
+
+    >p {
         z-index: 1;
         font-size: 8vw;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
         display: flex;
@@ -52,7 +151,8 @@
         align-items: center;
     }
 }
-.overlay{
+
+.overlay {
     z-index: 1;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.512);
@@ -61,7 +161,7 @@
 }
 
 
-#card-1{
+#card-1 {
     z-index: 2;
     height: 25rem;
     position: relative;
@@ -69,14 +169,16 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    >div{
+
+    >div {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         display: flex;
         height: 100%;
-        >div{
+
+        >div {
             position: relative;
             display: flex;
             flex-direction: column;
@@ -85,7 +187,8 @@
             width: 30vw;
             height: 100%;
             scale: 1.1;
-            >a{
+
+            >a {
                 text-align: center;
                 width: 10rem;
                 height: 2rem;
@@ -99,68 +202,91 @@
                 transform: translateX(-50%);
                 border-radius: 3px;
                 color: white;
-                &:hover{
+
+                &:hover {
                     background-color: white;
                     color: black;
                     border: 2px solid black;
                 }
             }
         }
-        >div[id='c2']{
+
+        >div[id='c2'] {
             background-color: #222;
             color: white;
-            >a{
+
+            >a {
                 background-color: #222;
                 border: 2px solid white;
-                &:hover{
+
+                &:hover {
                     background-color: white;
                     color: #222;
                 }
             }
         }
     }
-    >div>div{
-        >h1{
+
+    >div>div {
+        >h1 {
             font-size: 2rem;
             text-align: center;
         }
-        >p{
+
+        >p {
             font-size: 0.8rem;
         }
     }
 }
-#c1,#c2,#c3{
+
+#c1,
+#c2,
+#c3 {
     position: relative;
+    top: 0;
     background-color: #eee;
     box-shadow: #222 0 0 5px;
 }
-#c2{
-    top: -2rem;
+
+#c2 {
+    top: -20px;
     z-index: 1;
 }
-article{
+
+#some-text {
+    position: relative;
+}
+
+article {
     padding: 5rem 7rem;
     text-align: center;
     font-size: 3rem;
     font-weight: 900;
 }
-#about>div{
+
+#about>div {
     display: flex;
     height: 25rem;
     width: 100%;
 }
-#left-about{
+
+#left-about {
     width: 100%;
     padding: 5rem;
 }
-#right-about{
+
+#right-about {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
+    >img{
+        box-shadow: 0 0 5px #222;        
+    }
 }
-#img-about-1{
+
+#img-about-1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -168,7 +294,8 @@ article{
     height: auto;
     max-width: 100%;
 }
-#img-about-2{
+
+#img-about-2 {
     width: 20rem;
     position: absolute;
     top: 20%;
@@ -176,23 +303,29 @@ article{
     max-width: 100%;
 }
 
-#we-do>div{
+#we-do>div {
     display: flex;
     height: 25rem;
     width: 100%;
 }
-#right-we-do{
+
+#right-we-do {
     width: 100%;
     padding: 5rem;
 }
-#left-we-do{
+
+#left-we-do {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
+    >img{
+        box-shadow: 0 0 5px #222;
+    }
 }
-#img-we-do-1{
+
+#img-we-do-1 {
     position: absolute;
     top: 0;
     right: 0;
@@ -200,7 +333,8 @@ article{
     height: auto;
     max-width: 100%;
 }
-#img-we-do-2{
+
+#img-we-do-2 {
     width: 20rem;
     position: absolute;
     top: 20%;
@@ -208,35 +342,40 @@ article{
     max-width: 100%;
 }
 
-#before-port{
+#before-port {
     height: 32rem;
     background-color: #eee;
     background-image: url('assets/images/aryan-dhiman-iGLLtLINSkw-unsplash.jpg');
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
-    >div{
+
+    >div {
         position: relative;
     }
-    >div>div{
+
+    >div>div {
         box-shadow: 0 0 3px #555;
         background-color: #222;
-        color:#fff ;
+        color: #fff;
         width: 50rem;
         padding: 3rem;
         position: absolute;
         top: 3rem;
-        left: 4rem;
+        left: 0rem;
 
     }
-    >div>div>h1{
+
+    >div>div>h1 {
         text-align: center;
     }
 }
-#portfolio>div{
+
+#portfolio>div {
     width: 100%;
 }
-#port-container{
+
+#port-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -244,31 +383,58 @@ article{
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem 0;
+    background-color: #222;
 }
-.box-port{
+
+.box-port {
+    visibility: hidden;
     cursor: pointer;
     overflow: hidden;
     width: 22rem;
     aspect-ratio: 1/1;
     background-color: #555;
     position: relative;
-    >img{
+
+    >img {
         transition: 0.5s;
         position: absolute;
         width: 100%;
         height: 100%;
     }
-    &:hover{
-        >.overlay{
+
+    &:hover {
+        >.overlay {
             opacity: 0;
         }
-        >img{
+
+        >img {
             scale: 1.1;
         }
     }
 }
-.overlay{transition: 0.5s;}
-.text-overlay{
+
+.display {
+    visibility: hidden;
+    animation: display 0.5s forwards;
+}
+
+@keyframes display {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.overlay {
+    transition: 0.5s;
+}
+
+.text-overlay {
     color: white;
     position: absolute;
     text-align: center;
@@ -280,7 +446,8 @@ article{
     height: 100%;
     padding: 2rem;
 }
-#contact{
+
+#contact {
     height: fit-content;
     width: fit-content;
     height: 30rem;
@@ -288,7 +455,8 @@ article{
     background-image: url('assets/images/aryan-dhiman-iGLLtLINSkw-unsplash.jpg');
     background-size: cover;
 }
-form{
+
+form {
     margin: 2rem;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.455);
@@ -304,23 +472,27 @@ form{
     color: white;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    >input,textarea{
+
+    >input,
+    textarea {
         color: white;
         width: 100%;
         padding: 0.3rem 1rem;
         border: 1px solid white;
         background: none;
     }
+
     >input[type="submit"] {
         border: none;
-        outline:none ;
+        outline: none;
         background-color: tomato;
         font-size: 1rem;
         padding: 0.5rem 2rem;
         cursor: pointer;
     }
 }
-footer{
+
+footer {
     background-color: #111;
     color: white;
     display: flex;
@@ -330,13 +502,15 @@ footer{
     text-align: center;
     gap: 0.5rem;
     padding: 1rem;
-    >div{
+
+    >div {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
     }
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
